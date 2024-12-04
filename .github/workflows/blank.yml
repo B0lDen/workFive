@@ -22,3 +22,12 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      - name: Login to GitHub Container Registry
+        run: echo "${{ secrets.CR_PAT }}" | docker login ghcr.io -u ${{ github.b0lden }} --password-stdin
+
+      - name: Build Docker image
+        run: docker build -t ghcr.io/${{ github.b0lden }}/node .
+
+      - name: Push Docker image to GitHub Container Registry
+        run: docker push ghcr.io/${{ github.b0lden }}/node
