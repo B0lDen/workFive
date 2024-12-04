@@ -31,10 +31,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build Docker image
-        run: docker build -t ghcr.io/b0lden/workfive${{ github.b0lden }}/node .
-
-      - name: Build Docker tag
-        run: docker tag node:latest${{ github.b0lden }}/node
+        run: docker build -t ghcr.io/b0lden/workfive/node:latest .
 
       - name: Push Docker image to GitHub Container Registry
-        run: docker push node
+        run: docker push ghcr.io/b0lden/workfive/node:latest
