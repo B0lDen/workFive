@@ -31,7 +31,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build Docker image
-        run: docker build -t ghcr.io/b0lden/workfive/node:latest${{ github.b0lden }}/node .
+        run: docker build -t ghcr.io/b0lden/workfive/${{ github.b0lden }}/node .
 
       - name: Push Docker image to GitHub Container Registry
         run: docker push ghcr.io/${{ github.b0lden }}/node
