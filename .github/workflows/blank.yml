@@ -34,4 +34,4 @@ jobs:
         run: docker build -t ghcr.io/b0lden/workfive/node:latest .
 
       - name: Push Docker image to GitHub Container Registry
-        run: docker push ghcr.io/b0lden/workfive/node:latest
+        run: docker push ghcr.io/b0lden/workfive/node
